@@ -8,7 +8,20 @@ function boot(): void {
   }
 
   document.documentElement.setAttribute(ROOT_MARKER, "true");
-  startExecutablePromptsFeature();
+  startWhenBodyIsReady();
 }
 
-boot();
+function startWhenBodyIsReady(): void {
+  if (document.body) {
+    startExecutablePromptsFeature();
+    return;
+  }
+
+  window.setTimeout(startWhenBodyIsReady, 50);
+}
+
+try {
+  boot();
+} catch {
+  // Content scripts should never break ChatGPT if the host DOM changes.
+}
