@@ -1,0 +1,13 @@
+{
+  "name": "chatgpt-power-tools",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Chrome extension power tools for heavy ChatGPT users.",
+  "type": "module",
+  "scripts": {
+    "build": "npm --prefix extension run build",
+    "dev": "npm --prefix extension run dev",
+    "typecheck": "npm --prefix extension run typecheck"
+  },
+  "license": "MIT"
+}
