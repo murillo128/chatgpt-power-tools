@@ -9,5 +9,8 @@
     "dev": "npm --prefix extension run dev",
     "typecheck": "npm --prefix extension run typecheck"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "workspaces": [
+    "extension"
+  ]
 }
